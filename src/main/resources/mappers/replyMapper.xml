@@ -40,4 +40,8 @@
         SELECT COUNT(bno) FROM tbl_reply WHERE bno = #{bno}
     </select>
 
+    <select id="getBno" resultType="int">
+        SELECT bno from tbl_reply WHERE rno = #{rno}
+    </select>
+
 </mapper>

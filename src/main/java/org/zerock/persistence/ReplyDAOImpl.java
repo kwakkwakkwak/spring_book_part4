@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.ReplyVO;
 
@@ -54,4 +55,12 @@ public class ReplyDAOImpl implements ReplyDAO {
     public int count(Integer bno) throws Exception {
         return session.selectOne(namespace + ".count", bno);
     }
+
+    @Override
+    public int getBno(Integer rno) throws Exception {
+        return session.selectOne(namespace+".getBno", rno);
+    }
+
+
+
 }
